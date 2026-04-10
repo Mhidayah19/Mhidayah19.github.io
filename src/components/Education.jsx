@@ -27,42 +27,51 @@ export default function Education() {
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
         style={{
-          fontSize: '0.7rem',
-          fontWeight: 600,
-          letterSpacing: '0.12em',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '12px',
+          fontWeight: 500,
+          letterSpacing: '1.2px',
           color: 'var(--teal-light)',
           textTransform: 'uppercase',
           marginBottom: '3rem',
+          lineHeight: 1.0,
         }}
       >
-        04 · Education
+        04 &middot; Education
       </motion.p>
 
       <div className="education-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
-        {education.map((edu, i) => (
+        {education.map((edu) => (
           <motion.div
             key={edu.id}
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: '-80px' }}
+            style={{
+              padding: '1.5rem',
+              backgroundColor: 'var(--surface-card)',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-card)',
+            }}
           >
-            <p style={{ fontSize: '0.75rem', fontWeight: 400, color: 'var(--teal-light)', marginBottom: '0.5rem' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 400, color: 'var(--teal-light)', marginBottom: '0.75rem', letterSpacing: '0.6px', textTransform: 'uppercase', lineHeight: 1.0 }}>
               {edu.period}
             </p>
             <h3
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '1.05rem',
-                fontWeight: 700,
-                color: 'var(--teal-dark)',
-                letterSpacing: '-0.02em',
-                marginBottom: '0.35rem',
+                fontSize: '24px',
+                fontWeight: 400,
+                color: 'var(--ink)',
+                letterSpacing: '-0.48px',
+                lineHeight: 1.0,
+                marginBottom: '0.5rem',
               }}
             >
               {edu.institution}
             </h3>
-            <p style={{ fontSize: '0.85rem', fontWeight: 300, color: 'var(--ink-muted)' }}>
+            <p style={{ fontSize: '14px', fontWeight: 300, color: 'var(--ink-muted)', lineHeight: 1.4 }}>
               {edu.degree}
             </p>
           </motion.div>

@@ -27,15 +27,17 @@ export default function Experience() {
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
         style={{
-          fontSize: '0.7rem',
-          fontWeight: 600,
-          letterSpacing: '0.12em',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '12px',
+          fontWeight: 500,
+          letterSpacing: '1.2px',
           color: 'var(--teal-light)',
           textTransform: 'uppercase',
           marginBottom: '3rem',
+          lineHeight: 1.0,
         }}
       >
-        03 · Experience
+        03 &middot; Experience
       </motion.p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
@@ -57,10 +59,10 @@ export default function Experience() {
           >
             {/* Left: period + location */}
             <div>
-              <p style={{ fontSize: '0.8rem', fontWeight: 400, color: 'var(--ink-muted)', marginBottom: '0.25rem' }}>
+              <p style={{ fontSize: '14px', fontWeight: 400, color: 'var(--ink-muted)', marginBottom: '0.25rem' }}>
                 {exp.period}
               </p>
-              <p style={{ fontSize: '0.75rem', fontWeight: 400, color: 'var(--teal-light)', letterSpacing: '0.04em' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 400, color: 'var(--teal-light)', letterSpacing: '0.6px', textTransform: 'uppercase' }}>
                 {exp.location}
               </p>
             </div>
@@ -69,12 +71,14 @@ export default function Experience() {
             <div>
               <p
                 style={{
-                  fontSize: '0.7rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.08em',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '12px',
+                  fontWeight: 500,
+                  letterSpacing: '0.8px',
                   color: 'var(--teal-light)',
                   textTransform: 'uppercase',
                   marginBottom: '0.35rem',
+                  lineHeight: 1.0,
                 }}
               >
                 {exp.company}
@@ -82,16 +86,17 @@ export default function Experience() {
               <h3
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '1.1rem',
-                  fontWeight: 700,
-                  color: 'var(--red)',
-                  letterSpacing: '-0.02em',
+                  fontSize: '24px',
+                  fontWeight: 400,
+                  color: 'var(--ink)',
+                  letterSpacing: '-0.48px',
+                  lineHeight: 1.0,
                   marginBottom: '0.75rem',
                 }}
               >
                 {exp.role}
               </h3>
-              <p style={{ fontSize: '0.9rem', fontWeight: 300, color: 'var(--ink-muted)', lineHeight: 1.7 }}>
+              <p style={{ fontSize: '14px', fontWeight: 300, color: 'var(--ink-muted)', lineHeight: 1.5 }}>
                 {exp.description}
               </p>
             </div>

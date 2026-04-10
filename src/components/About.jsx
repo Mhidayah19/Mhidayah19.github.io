@@ -33,15 +33,17 @@ export default function About() {
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
         style={{
-          fontSize: '0.7rem',
-          fontWeight: 600,
-          letterSpacing: '0.12em',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '12px',
+          fontWeight: 500,
+          letterSpacing: '1.2px',
           color: 'var(--teal-light)',
           textTransform: 'uppercase',
           marginBottom: '3rem',
+          lineHeight: 1.0,
         }}
       >
-        01 · About
+        01 &middot; About
       </motion.p>
 
       <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
@@ -55,21 +57,22 @@ export default function About() {
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: '1.5rem',
-              fontWeight: 700,
-              color: 'var(--teal-dark)',
+              fontSize: '32px',
+              fontWeight: 400,
+              color: 'var(--ink)',
               marginBottom: '1.25rem',
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.96px',
+              lineHeight: 1.0,
             }}
           >
             Engineer who moves between layers.
           </h2>
-          <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'var(--ink-muted)', marginBottom: '1rem' }}>
+          <p style={{ fontSize: '16px', lineHeight: 1.5, color: 'var(--ink-muted)', marginBottom: '1rem' }}>
             I'm a final-year Software Engineering student at SIT (graduating August 2026), currently building
             enterprise AI at Mymediset as part of my capstone. My work spans AI agent design, mobile
             development, and full-stack web — with a preference for systems that feel fast and intentional.
           </p>
-          <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'var(--ink-muted)' }}>
+          <p style={{ fontSize: '16px', lineHeight: 1.5, color: 'var(--ink-muted)' }}>
             Outside of work I'm building Kickstand, an AI voice agent for Singapore motorcycle owners.
             I care about developer experience, clear architecture, and shipping things that actually work.
           </p>
@@ -84,12 +87,14 @@ export default function About() {
         >
           <p
             style={{
-              fontSize: '0.7rem',
-              fontWeight: 600,
-              letterSpacing: '0.1em',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '12px',
+              fontWeight: 500,
+              letterSpacing: '1.2px',
               color: 'var(--teal-light)',
               textTransform: 'uppercase',
               marginBottom: '1rem',
+              lineHeight: 1.0,
             }}
           >
             Technologies
@@ -99,13 +104,14 @@ export default function About() {
               <span
                 key={skill}
                 style={{
-                  fontSize: '0.7rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '12px',
                   fontWeight: 400,
-                  padding: '0.35rem 0.75rem',
-                  border: '1px solid var(--teal-light)',
-                  borderRadius: '999px',
-                  color: 'var(--teal-dark)',
-                  letterSpacing: '0.01em',
+                  padding: '4px 10px',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-btn)',
+                  color: 'var(--ink)',
+                  letterSpacing: '0.3px',
                 }}
               >
                 {skill}

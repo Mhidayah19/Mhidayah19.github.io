@@ -11,25 +11,24 @@ export default function WorkCard({ project }) {
     gridCol, gridRow, bg, dark,
   } = project
 
-  const textColor = dark ? '#fff' : 'var(--ink)'
   const mutedColor = dark ? 'rgba(255,255,255,0.65)' : 'var(--ink-muted)'
-  const tagBg = dark ? 'rgba(255,255,255,0.12)' : 'transparent'
-  const tagBorder = dark ? 'rgba(255,255,255,0.25)' : 'var(--teal-light)'
-  const tagColor = dark ? 'rgba(255,255,255,0.85)' : 'var(--teal-dark)'
+  const tagBg = dark ? 'rgba(255,255,255,0.12)' : 'var(--warm-cream)'
+  const tagBorder = dark ? 'rgba(255,255,255,0.25)' : 'var(--border)'
+  const tagColor = dark ? 'rgba(255,255,255,0.85)' : 'var(--ink)'
 
   return (
     <motion.article
       variants={cardVariant}
-      whileHover={{ y: -3, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+      whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
       style={{
         gridColumn: gridCol,
         gridRow: gridRow,
-        backgroundColor: bg,
+        backgroundColor: bg || 'var(--surface-card)',
         backgroundImage: dark
           ? 'radial-gradient(ellipse at 70% 20%, rgba(140,199,196,0.18) 0%, transparent 65%)'
           : 'none',
         border: '1px solid var(--border)',
-        borderRadius: '8px',
+        borderRadius: 'var(--radius-card)',
         padding: '1.5rem',
         display: 'flex',
         flexDirection: 'column',
@@ -47,14 +46,16 @@ export default function WorkCard({ project }) {
         <span
           style={{
             alignSelf: 'flex-start',
-            fontSize: '0.65rem',
-            fontWeight: 600,
-            letterSpacing: '0.08em',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '11px',
+            fontWeight: 500,
+            letterSpacing: '0.8px',
             textTransform: 'uppercase',
-            padding: '0.25rem 0.6rem',
-            borderRadius: '999px',
+            padding: '3px 8px',
+            borderRadius: 'var(--radius-btn)',
             backgroundColor: dark ? 'rgba(255,255,255,0.18)' : 'var(--red)',
-            color: dark ? '#fff' : '#fff',
+            color: '#fff',
+            lineHeight: 1.3,
           }}
         >
           {badge}
@@ -65,11 +66,11 @@ export default function WorkCard({ project }) {
       <h3
         style={{
           fontFamily: 'var(--font-display)',
-          fontSize: dark ? '1.6rem' : '1.05rem',
-          fontWeight: 700,
-          color: dark ? '#fff' : 'var(--red)',
-          letterSpacing: '-0.02em',
-          lineHeight: 1.15,
+          fontSize: dark ? '32px' : '20px',
+          fontWeight: 400,
+          color: dark ? '#fff' : 'var(--ink)',
+          letterSpacing: dark ? '-0.96px' : '-0.48px',
+          lineHeight: 1.0,
           flex: dark ? 1 : 0,
         }}
       >
@@ -79,10 +80,10 @@ export default function WorkCard({ project }) {
       {/* Description */}
       <p
         style={{
-          fontSize: '0.82rem',
+          fontSize: '14px',
           fontWeight: 300,
           color: mutedColor,
-          lineHeight: 1.65,
+          lineHeight: 1.4,
           flex: 1,
         }}
       >
@@ -96,13 +97,15 @@ export default function WorkCard({ project }) {
             <span
               key={tag}
               style={{
-                fontSize: '0.65rem',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '11px',
                 fontWeight: 400,
-                padding: '0.2rem 0.5rem',
-                borderRadius: '4px',
+                padding: '2px 6px',
+                borderRadius: 'var(--radius-btn)',
                 border: `1px solid ${tagBorder}`,
                 backgroundColor: tagBg,
                 color: tagColor,
+                letterSpacing: '0.3px',
               }}
             >
               {tag}
@@ -110,7 +113,7 @@ export default function WorkCard({ project }) {
           ))}
         </div>
         {link && (
-          <span style={{ fontSize: '0.8rem', color: dark ? '#fff' : 'var(--teal-dark)' }}>↗</span>
+          <span style={{ fontSize: '14px', color: dark ? '#fff' : 'var(--ink)' }}>&#8599;</span>
         )}
       </div>
     </motion.article>
