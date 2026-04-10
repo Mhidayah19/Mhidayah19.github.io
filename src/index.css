@@ -1,17 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #FFF6F6;
+  /* === Intercom palette === */
+  --off-black: #111111;
+  --warm-cream: #faf9f6;
+  --white: #ffffff;
+  --border-oat: #dedbd6;
+  --muted: #7b7b78;
+
+  /* === Brand accents (retained) === */
   --teal-dark: #2C687B;
   --teal-light: #8CC7C4;
   --red: #DB1A1A;
-  --surface: #ffffff;
-  --border: oklch(88% 0.02 15);
-  --ink: oklch(28% 0.04 200);
-  --ink-muted: oklch(48% 0.03 200);
 
-  --font-display: 'Fraunces', serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  /* === Semantic === */
+  --surface: var(--warm-cream);
+  --surface-card: var(--white);
+  --ink: var(--off-black);
+  --ink-muted: var(--muted);
+  --border: var(--border-oat);
+
+  /* === Typography — geometric sans (Intercom-style) === */
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Fraunces', ui-serif, Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* === Radius === */
+  --radius-btn: 4px;
+  --radius-card: 8px;
 }
 
 *, *::before, *::after {
@@ -23,17 +40,26 @@ html {
 }
 
 body {
-  background-color: var(--cream);
+  background-color: var(--surface);
   color: var(--ink);
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Intercom heading style: weight 400, tight line-height, aggressive negative tracking */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.00;
 }
+
+h1 { letter-spacing: -2.4px; }
+h2 { letter-spacing: -1.6px; }
+h3 { letter-spacing: -0.96px; }
+h4 { letter-spacing: -0.48px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
