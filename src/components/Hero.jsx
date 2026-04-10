@@ -50,24 +50,24 @@ export default function Hero() {
         <motion.h1
           variants={fadeUp}
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-serif)',
             fontSize: 'clamp(3.5rem, 8vw, 80px)',
-            fontWeight: 400,
+            fontWeight: 300,
+            fontStyle: 'italic',
             lineHeight: 1.0,
             letterSpacing: '-2.4px',
             color: 'var(--teal-dark)',
             marginBottom: '0.1em',
           }}
         >
-          Muhammad /
+          Muhammad
         </motion.h1>
         <motion.h1
           variants={fadeUp}
           style={{
-            fontFamily: 'var(--font-serif)',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(3.5rem, 8vw, 80px)',
-            fontWeight: 300,
-            fontStyle: 'italic',
+            fontWeight: 400,
             lineHeight: 1.0,
             letterSpacing: '-2.4px',
             color: 'var(--teal-dark)',
