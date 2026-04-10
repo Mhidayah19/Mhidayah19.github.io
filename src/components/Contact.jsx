@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const contactLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muhammad-hidayah/' },
-  { label: 'GitHub', href: 'https://github.com/Muhammad-Hidayah' },
+  { label: 'GitHub', href: 'https://github.com/Mhidayah19' },
   { label: 'Email', href: 'mailto:muhd.hidayah@outlook.com' },
   { label: 'Resume PDF', href: '/resume.pdf' },
 ]
