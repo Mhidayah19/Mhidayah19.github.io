@@ -24,7 +24,7 @@ export default function Contact() {
       <style>{`
   @media (max-width: 640px) {
     .contact-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
-    .contact-heading { font-size: clamp(1.75rem, 8vw, 2.5rem) !important; }
+    .contact-heading { font-size: clamp(32px, 8vw, 54px) !important; }
   }
 `}</style>
 
@@ -35,15 +35,17 @@ export default function Contact() {
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
         style={{
-          fontSize: '0.7rem',
-          fontWeight: 600,
-          letterSpacing: '0.12em',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '12px',
+          fontWeight: 500,
+          letterSpacing: '1.2px',
           color: 'var(--teal-light)',
           textTransform: 'uppercase',
           marginBottom: '3rem',
+          lineHeight: 1.0,
         }}
       >
-        05 · Contact
+        05 &middot; Contact
       </motion.p>
 
       <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
@@ -58,20 +60,20 @@ export default function Contact() {
             className="contact-heading"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              fontWeight: 900,
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-              color: 'var(--teal-dark)',
+              fontSize: 'clamp(32px, 4vw, 54px)',
+              fontWeight: 400,
+              lineHeight: 1.0,
+              letterSpacing: '-1.6px',
+              color: 'var(--ink)',
             }}
           >
             Open to{' '}
-            <span style={{ fontStyle: 'italic', fontWeight: 300 }}>
+            <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 300 }}>
               opportunities
             </span>
             <span style={{ color: 'var(--red)' }}>.</span>
           </h2>
-          <p style={{ marginTop: '1.25rem', fontSize: '0.9rem', fontWeight: 300, color: 'var(--ink-muted)', lineHeight: 1.7 }}>
+          <p style={{ marginTop: '1.25rem', fontSize: '16px', fontWeight: 400, color: 'var(--ink-muted)', lineHeight: 1.5 }}>
             Graduating August 2026. Interested in full-time roles in Singapore or remote — frontend, mobile, or full-stack.
           </p>
         </motion.div>
@@ -98,16 +100,18 @@ export default function Contact() {
                 borderBottom: '1px solid var(--border)',
                 textDecoration: 'none',
                 color: 'var(--ink)',
-                fontSize: '0.95rem',
+                fontSize: '16px',
                 fontWeight: 400,
-                transition: 'color 0.2s',
+                transition: 'color 0.2s, transform 0.2s',
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.color = 'var(--teal-dark)'
+                e.currentTarget.style.transform = 'scale(1.02)'
                 e.currentTarget.querySelector('.arrow').style.transform = 'translateX(4px)'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.color = 'var(--ink)'
+                e.currentTarget.style.transform = 'scale(1)'
                 e.currentTarget.querySelector('.arrow').style.transform = 'translateX(0)'
               }}
             >
@@ -116,7 +120,7 @@ export default function Contact() {
                 className="arrow"
                 style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}
               >
-                →
+                &rarr;
               </span>
             </a>
           ))}
@@ -131,14 +135,15 @@ export default function Contact() {
         viewport={{ once: true, margin: '-80px' }}
         style={{
           marginTop: '5rem',
-          fontSize: '0.75rem',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '12px',
           fontWeight: 400,
           color: 'var(--ink-muted)',
           textAlign: 'center',
-          letterSpacing: '0.02em',
+          letterSpacing: '0.6px',
         }}
       >
-        © 2026 Muhammad Hidayah. Built with React + Vite.
+        &copy; 2026 Muhammad Hidayah. Built with React + Vite.
       </motion.p>
     </section>
   )

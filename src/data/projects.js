@@ -26,7 +26,7 @@ export const projects = [
     link: null,
     gridCol: '7 / 13',
     gridRow: '1 / 2',
-    bg: 'var(--surface)',
+    bg: 'var(--surface-card)',
     dark: false,
   },
   {
@@ -41,7 +41,7 @@ export const projects = [
     link: null,
     gridCol: '7 / 10',
     gridRow: '2 / 3',
-    bg: 'var(--surface)',
+    bg: 'var(--surface-card)',
     dark: false,
   },
   {
@@ -56,7 +56,7 @@ export const projects = [
     link: null,
     gridCol: '10 / 13',
     gridRow: '2 / 3',
-    bg: 'var(--cream)',
+    bg: 'var(--warm-cream)',
     dark: false,
   },
   {
@@ -71,7 +71,7 @@ export const projects = [
     link: null,
     gridCol: '1 / 7',
     gridRow: '3 / 4',
-    bg: 'var(--surface)',
+    bg: 'var(--surface-card)',
     dark: false,
   },
   {
@@ -86,7 +86,7 @@ export const projects = [
     link: 'https://github.com/gavdilabs/cap-mcp-plugin',
     gridCol: '7 / 13',
     gridRow: '3 / 4',
-    bg: 'var(--surface)',
+    bg: 'var(--surface-card)',
     dark: false,
   },
 ]

@@ -33,15 +33,17 @@ export default function Hero() {
         <motion.p
           variants={fadeUp}
           style={{
-            fontSize: '0.7rem',
-            fontWeight: 600,
-            letterSpacing: '0.12em',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '12px',
+            fontWeight: 500,
+            letterSpacing: '1.2px',
             color: 'var(--teal-light)',
             marginBottom: '1.5rem',
             textTransform: 'uppercase',
+            lineHeight: 1.0,
           }}
         >
-          Software Engineer · Singapore
+          Software Engineer &middot; Singapore
         </motion.p>
 
         {/* Name */}
@@ -49,10 +51,10 @@ export default function Hero() {
           variants={fadeUp}
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(3.5rem, 8vw, 7rem)',
-            fontWeight: 900,
+            fontSize: 'clamp(3.5rem, 8vw, 80px)',
+            fontWeight: 400,
             lineHeight: 1.0,
-            letterSpacing: '-0.03em',
+            letterSpacing: '-2.4px',
             color: 'var(--teal-dark)',
             marginBottom: '0.1em',
           }}
@@ -62,12 +64,12 @@ export default function Hero() {
         <motion.h1
           variants={fadeUp}
           style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(3.5rem, 8vw, 7rem)',
+            fontFamily: 'var(--font-serif)',
+            fontSize: 'clamp(3.5rem, 8vw, 80px)',
             fontWeight: 300,
             fontStyle: 'italic',
             lineHeight: 1.0,
-            letterSpacing: '-0.03em',
+            letterSpacing: '-2.4px',
             color: 'var(--teal-dark)',
             marginBottom: '2rem',
           }}
@@ -80,8 +82,10 @@ export default function Hero() {
           variants={fadeUp}
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
-            fontWeight: 300,
+            fontSize: 'clamp(20px, 2.5vw, 24px)',
+            fontWeight: 400,
+            letterSpacing: '-0.48px',
+            lineHeight: 1.0,
             color: 'var(--ink-muted)',
             marginBottom: '1.5rem',
           }}
@@ -96,7 +100,7 @@ export default function Hero() {
             wrapper="span"
             speed={50}
             repeat={Infinity}
-            style={{ color: 'var(--red)', fontStyle: 'italic' }}
+            style={{ color: 'var(--red)', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}
           />
         </motion.p>
 
@@ -104,11 +108,11 @@ export default function Hero() {
         <motion.p
           variants={fadeUp}
           style={{
-            fontSize: '1rem',
-            fontWeight: 300,
+            fontSize: '16px',
+            fontWeight: 400,
             color: 'var(--ink-muted)',
             maxWidth: '520px',
-            lineHeight: 1.7,
+            lineHeight: 1.5,
             marginBottom: '2.5rem',
           }}
         >
@@ -121,54 +125,49 @@ export default function Hero() {
           variants={fadeUp}
           style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
         >
-          <a
+          <motion.a
             href="#work"
+            whileHover={{ scale: 1.1, backgroundColor: '#fff', color: 'var(--off-black)' }}
+            whileTap={{ scale: 0.85 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 15 }}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.4rem',
-              padding: '0.7rem 1.5rem',
-              backgroundColor: 'var(--teal-dark)',
+              padding: '0 14px',
+              height: '40px',
+              backgroundColor: 'var(--off-black)',
               color: '#fff',
-              fontWeight: 600,
-              fontSize: '0.85rem',
-              borderRadius: '4px',
+              fontWeight: 500,
+              fontSize: '14px',
+              borderRadius: 'var(--radius-btn)',
               textDecoration: 'none',
-              letterSpacing: '0.01em',
-              transition: 'opacity 0.2s',
+              border: '1px solid var(--off-black)',
             }}
-            onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
-            onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
           >
-            View my work →
-          </a>
-          <a
+            View my work
+          </motion.a>
+          <motion.a
             href="#contact"
+            whileHover={{ scale: 1.1, backgroundColor: 'var(--off-black)', color: '#fff' }}
+            whileTap={{ scale: 0.85 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 15 }}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.4rem',
-              padding: '0.7rem 1.5rem',
-              border: '1px solid var(--teal-dark)',
-              color: 'var(--teal-dark)',
-              fontWeight: 600,
-              fontSize: '0.85rem',
-              borderRadius: '4px',
+              padding: '0 14px',
+              height: '40px',
+              border: '1px solid var(--off-black)',
+              color: 'var(--off-black)',
+              fontWeight: 500,
+              fontSize: '14px',
+              borderRadius: 'var(--radius-btn)',
               textDecoration: 'none',
-              letterSpacing: '0.01em',
-              transition: 'background-color 0.2s, color 0.2s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.backgroundColor = 'var(--teal-dark)'
-              e.currentTarget.style.color = '#fff'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.backgroundColor = 'transparent'
-              e.currentTarget.style.color = 'var(--teal-dark)'
             }}
           >
             Get in touch
-          </a>
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>

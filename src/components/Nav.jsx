@@ -12,7 +12,10 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onScroll = () => {
+      const shouldScroll = window.scrollY > 24
+      setScrolled(prev => prev === shouldScroll ? prev : shouldScroll)
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -40,7 +43,7 @@ export default function Nav() {
           alignItems: 'center',
           justifyContent: 'space-between',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          backgroundColor: scrolled ? 'oklch(98% 0.01 15 / 0.85)' : 'transparent',
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.85)' : 'transparent',
           borderBottom: scrolled ? '1px solid var(--border)' : 'none',
           transition: 'background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease',
         }}
@@ -50,7 +53,7 @@ export default function Nav() {
           href="#"
           style={{
             fontFamily: 'var(--font-display)',
-            fontWeight: 700,
+            fontWeight: 500,
             fontSize: '1rem',
             color: 'var(--ink)',
             textDecoration: 'none',
@@ -67,11 +70,10 @@ export default function Nav() {
               key={label}
               href={href}
               style={{
-                fontSize: '0.8rem',
+                fontSize: '16px',
                 fontWeight: 400,
                 color: 'var(--ink-muted)',
                 textDecoration: 'none',
-                letterSpacing: '0.01em',
                 transition: 'color 0.2s',
               }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--ink)')}
@@ -86,20 +88,27 @@ export default function Nav() {
             href="/resume.pdf"
             download
             style={{
-              fontSize: '0.75rem',
-              fontWeight: 600,
+              fontSize: '14px',
+              fontWeight: 500,
               color: '#fff',
-              backgroundColor: 'var(--red)',
-              padding: '0.4rem 0.9rem',
-              borderRadius: '4px',
+              backgroundColor: 'var(--off-black)',
+              padding: '6px 14px',
+              borderRadius: 'var(--radius-btn)',
               textDecoration: 'none',
-              letterSpacing: '0.01em',
-              transition: 'opacity 0.2s',
+              transition: 'transform 0.2s, background-color 0.2s, color 0.2s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
-            onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'scale(1.1)'
+              e.currentTarget.style.backgroundColor = '#fff'
+              e.currentTarget.style.color = 'var(--off-black)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'scale(1)'
+              e.currentTarget.style.backgroundColor = 'var(--off-black)'
+              e.currentTarget.style.color = '#fff'
+            }}
           >
-            Resume ↓
+            Resume
           </a>
         </div>
 
@@ -137,7 +146,7 @@ export default function Nav() {
             right: 0,
             zIndex: 49,
             flexDirection: 'column',
-            backgroundColor: 'oklch(98% 0.01 15 / 0.97)',
+            backgroundColor: 'rgba(255, 255, 255, 0.97)',
             backdropFilter: 'blur(12px)',
             borderBottom: '1px solid var(--border)',
             padding: '1.5rem 2rem',
@@ -150,7 +159,7 @@ export default function Nav() {
               href={href}
               onClick={() => setMenuOpen(false)}
               style={{
-                fontSize: '1rem',
+                fontSize: '16px',
                 fontWeight: 400,
                 color: 'var(--ink)',
                 textDecoration: 'none',
@@ -163,17 +172,17 @@ export default function Nav() {
             href="/resume.pdf"
             download
             style={{
-              fontSize: '0.85rem',
-              fontWeight: 600,
+              fontSize: '14px',
+              fontWeight: 500,
               color: '#fff',
-              backgroundColor: 'var(--red)',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
+              backgroundColor: 'var(--off-black)',
+              padding: '8px 16px',
+              borderRadius: 'var(--radius-btn)',
               textDecoration: 'none',
               alignSelf: 'flex-start',
             }}
           >
-            Resume ↓
+            Resume
           </a>
         </div>
       )}
