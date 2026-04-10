@@ -1,0 +1,145 @@
+import { motion } from 'framer-motion'
+
+const contactLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muhammad-hidayah/' },
+  { label: 'GitHub', href: 'https://github.com/Muhammad-Hidayah' },
+  { label: 'Email', href: 'mailto:muhd.hidayah@outlook.com' },
+  { label: 'Resume PDF', href: '/resume.pdf' },
+]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+}
+
+export default function Contact() {
+  return (
+    <section
+      id="contact"
+      style={{
+        padding: 'clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 7rem)',
+        borderTop: '1px solid var(--border)',
+      }}
+    >
+      <style>{`
+  @media (max-width: 640px) {
+    .contact-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .contact-heading { font-size: clamp(1.75rem, 8vw, 2.5rem) !important; }
+  }
+`}</style>
+
+      {/* Section label */}
+      <motion.p
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: '-80px' }}
+        style={{
+          fontSize: '0.7rem',
+          fontWeight: 600,
+          letterSpacing: '0.12em',
+          color: 'var(--teal-light)',
+          textTransform: 'uppercase',
+          marginBottom: '3rem',
+        }}
+      >
+        05 · Contact
+      </motion.p>
+
+      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+        {/* Left: heading */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+        >
+          <h2
+            className="contact-heading"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+              fontWeight: 900,
+              lineHeight: 1.1,
+              letterSpacing: '-0.03em',
+              color: 'var(--teal-dark)',
+            }}
+          >
+            Open to{' '}
+            <span style={{ fontStyle: 'italic', fontWeight: 300 }}>
+              opportunities
+            </span>
+            <span style={{ color: 'var(--red)' }}>.</span>
+          </h2>
+          <p style={{ marginTop: '1.25rem', fontSize: '0.9rem', fontWeight: 300, color: 'var(--ink-muted)', lineHeight: 1.7 }}>
+            Graduating August 2026. Interested in full-time roles in Singapore or remote — frontend, mobile, or full-stack.
+          </p>
+        </motion.div>
+
+        {/* Right: links */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+          style={{ paddingTop: '0.5rem' }}
+        >
+          {contactLinks.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '1rem 0',
+                borderBottom: '1px solid var(--border)',
+                textDecoration: 'none',
+                color: 'var(--ink)',
+                fontSize: '0.95rem',
+                fontWeight: 400,
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.color = 'var(--teal-dark)'
+                e.currentTarget.querySelector('.arrow').style.transform = 'translateX(4px)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.color = 'var(--ink)'
+                e.currentTarget.querySelector('.arrow').style.transform = 'translateX(0)'
+              }}
+            >
+              <span>{label}</span>
+              <span
+                className="arrow"
+                style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}
+              >
+                →
+              </span>
+            </a>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Footer */}
+      <motion.p
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: '-80px' }}
+        style={{
+          marginTop: '5rem',
+          fontSize: '0.75rem',
+          fontWeight: 400,
+          color: 'var(--ink-muted)',
+          textAlign: 'center',
+          letterSpacing: '0.02em',
+        }}
+      >
+        © 2026 Muhammad Hidayah. Built with React + Vite.
+      </motion.p>
+    </section>
+  )
+}
